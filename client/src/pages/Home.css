@@ -1,0 +1,28 @@
+/* 🔹 Full Page Centered Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+  }
+  
+  /* 🔹 Circular Profile Picture */
+  .profile-picture {
+    width: 150px; /* Adjust as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures the image fills the circle properly */
+    border: 3px solid rgba(255, 255, 255, 0.5); /* Optional: Adds a soft border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds depth */
+    margin-bottom: 20px; /* Space between image and text */
+  }
+  
+  /* 🔹 Welcome Text */
+  .home-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+  }
+  
