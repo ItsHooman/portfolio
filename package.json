@@ -1,0 +1,14 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "Full-stack portfolio project",
+    "scripts": {
+      "client": "npm start --prefix client",
+      "server": "npm run dev --prefix backend",
+      "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+      "concurrently": "^7.6.0"
+    }
+  }
+  
