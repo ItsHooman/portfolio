@@ -1,28 +1,136 @@
-/* 🔹 Full Page Centered Container */
+/* ===== HERO ===== */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
-  }
-  
-  /* 🔹 Circular Profile Picture */
-  .profile-picture {
-    width: 150px; /* Adjust as needed */
-    height: 150px;
-    border-radius: 50%; /* Makes it a circle */
-    object-fit: cover; /* Ensures the image fills the circle properly */
-    border: 3px solid rgba(255, 255, 255, 0.5); /* Optional: Adds a soft border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds depth */
-    margin-bottom: 20px; /* Space between image and text */
-  }
-  
-  /* 🔹 Welcome Text */
-  .home-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-  }
-  
+  position: relative;
+  isolation: isolate;             /* for proper arrow layering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px); /* adjusts for navbar */
+  text-align: center;
+  color: white;
+  padding: 20px 16px 56px;
+  overflow: hidden;
+}
+
+/* Profile photo */
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+}
+
+/* Hero text */
+.home-title { font-size: 28px; font-weight: 700; color: white; }
+.accent { color: #22d3ee; }
+.home-roles { font-size: 1.1rem; opacity: 0.9; margin-top: 0.35rem; }
+.home-message {
+  max-width: 680px;
+  margin: 0.7rem auto 0.9rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ↓ cute bouncing scroll arrow */
+.scroll-indicator {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 2;
+  animation: bob 1.8s ease-in-out infinite;
+}
+.scroll-indicator:hover { background: rgba(255,255,255,0.08); }
+
+@keyframes bob {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/* ===== ABOUT PREVIEW ===== */
+/* ===== ABOUT & CERTIFICATES BOX ===== */
+.about-box {
+  background: rgba(255, 255, 255, 0.08); /* subtle translucent box */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  padding: 2.5rem 2rem;
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  text-align: center;
+  color: #f3f3f3;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* About section inside box */
+.about-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-box p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0 auto 2rem;
+  max-width: 750px;
+}
+
+/* Certificates section inside box */
+.certs h2 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.certs-note {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+/* Certificates grid — 2 per row on desktop */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.certs-grid img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.certs-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .home-title { font-size: 24px; }
+  .home-message { padding: 0 0.5rem; }
+  .certs-grid img { height: 180px; }
+}

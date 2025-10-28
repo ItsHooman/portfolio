@@ -1,16 +1,68 @@
 .contact-container {
-    text-align: center;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* adjust for navbar */
+  padding: 60px 20px;
+  color: #f3f3f3;
+}
+
+/* Glassy box like About/Projects */
+.contact-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 2.5rem 3rem;
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Title */
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Info lines */
+.contact-info {
+  font-size: 1.1rem;
+  margin: 0.6rem 0;
+  color: #e2e2e2;
+}
+
+.contact-info a {
+  color: #22d3ee;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+  color: #16a34a;
+  text-decoration: underline;
+}
+
+/* Add a small glow hover on the box itself */
+.contact-box:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .contact-box {
+    padding: 1.8rem;
   }
-  
   .contact-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
   }
-  
   .contact-info {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 1rem;
   }
-  
+}

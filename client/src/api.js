@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5010";
+const API_URL = "https://squid-app-2fq8l.ondigitalocean.app";
 
 // 📌 Fetch welcome message from backend
 export const fetchBackendMessage = async () => {

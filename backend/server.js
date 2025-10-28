@@ -38,7 +38,7 @@ app.use("/projects", require("./routes/projects"));
 app.use("/auth", require("./routes/auth")); // <-- Authentication Route
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Hooman's Portfolio Backend!" });
+  res.json({ message: "" });
 });
 
 // Start Server
