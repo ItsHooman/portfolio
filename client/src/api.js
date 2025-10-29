@@ -1,47 +1,61 @@
+// src/api.js
 import axios from "axios";
 
-const API_URL = "https://squid-app-2fq8l.ondigitalocean.app";
+// Prefer env var in production; fall back to DO URL (good for local testing too)
+const API_URL =
+  process.env.REACT_APP_API_URL || // CRA
+  import.meta?.env?.VITE_API_URL || // Vite
+  "https://squid-app-2fq8l.ondigitalocean.app"; // fallback
 
-// 📌 Fetch welcome message from backend
+// Create a single axios instance
+const api = axios.create({
+  baseURL: API_URL,
+});
+
+// OPTIONAL: attach token if you later protect PUT/DELETE
+// api.interceptors.request.use((config) => {
+//   const token = localStorage.getItem("token");
+//   if (token) config.headers.Authorization = `Bearer ${token}`; // or raw token if your middleware expects raw
+//   return config;
+// });
+
 export const fetchBackendMessage = async () => {
   try {
-    const response = await axios.get(API_URL);
-    return response.data.message; // Ensure this matches what the backend sends
-  } catch (error) {
-    console.error("Error fetching data:", error);
+    const { data } = await api.get("/");
+    // Your backend currently returns { message: "" } at "/"
+    return data?.message ?? "";
+  } catch (err) {
+    console.error("Error fetching backend message:", err);
     return "Error connecting to backend";
   }
 };
 
-// 📌 Fetch all projects from backend
 export const fetchProjects = async () => {
   try {
-    const response = await axios.get(`${API_URL}/projects`);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching projects:", error);
+    const { data } = await api.get("/projects");
+    return data;
+  } catch (err) {
+    console.error("Error fetching projects:", err);
     return [];
   }
 };
 
-// 📌 Edit a project
 export const updateProject = async (id, updatedProject) => {
   try {
-    const response = await axios.put(`${API_URL}/projects/${id}`, updatedProject);
-    return response.data;
-  } catch (error) {
-    console.error("Error updating project:", error);
+    const { data } = await api.put(`/projects/${id}`, updatedProject);
+    return data;
+  } catch (err) {
+    console.error("Error updating project:", err);
     return null;
   }
 };
 
-// 📌 Delete a project
 export const deleteProject = async (id) => {
   try {
-    await axios.delete(`${API_URL}/projects/${id}`);
+    await api.delete(`/projects/${id}`);
     return true;
-  } catch (error) {
-    console.error("Error deleting project:", error);
+  } catch (err) {
+    console.error("Error deleting project:", err);
     return false;
   }
 };
