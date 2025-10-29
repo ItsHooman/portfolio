@@ -17,7 +17,7 @@ export default function Home() {
     <>
       {/* ===== HERO ===== */}
       <section className="home-container">
-        <img src="/profile.JPG" alt="Profile" className="profile-picture" />
+        <img src="/profile.jpg" alt="Profile" className="profile-picture" />
 
         <h1 className="home-title">
           Hey, I’m <span className="accent">Hooman</span>
