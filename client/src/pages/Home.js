@@ -23,12 +23,9 @@ export default function Home() {
           Hey, I’m <span className="accent">Hooman</span>
         </h1>
 
-        <p className="home-roles">Full-Stack Developer • React • Node.js</p>
+        <p className="home-roles">Full-Stack Developer </p>
 
-        <p className="home-message">
-          {message ||
-            "I build modern, responsive web experiences using React, Node, and web design principles."}
-        </p>
+        
 
         {/* ↓ cute bouncing scroll arrow */}
         <button
@@ -49,11 +46,38 @@ export default function Home() {
   <div id="about-intro">
     <h2>About Me</h2>
     <p>
-      I’m a passionate full-stack developer with experience in <strong>React</strong>, <strong>Node.js</strong>, and
-      <strong> JavaScript</strong>. I studied the 3-year <strong>Computer Programming &amp; Analysis</strong> program
-      at <strong>George Brown College</strong> in Toronto, Canada, and graduated in 2025. I love designing modern,
-      accessible websites and web applications that feel fast, clean, and delightful to use.
-    </p>
+  I’m a passionate full-stack developer who enjoys transforming ideas into clean, interactive digital
+  experiences. My core expertise lies in <strong>React</strong>, <strong>Node.js</strong>, and modern
+  <strong> JavaScript</strong>, but I’m equally comfortable working across the full web stack — from crafting
+  responsive front-end interfaces to designing robust RESTful and GraphQL backends.
+  <br /><br />
+  I completed the <strong>3-year Computer Programming &amp; Analysis</strong> program at
+  <strong> George Brown College</strong> in Toronto, where I built a strong foundation in software engineering,
+  data structures, and UI/UX principles. During my studies, I developed multiple full-stack projects, including
+  <strong> TripMate</strong> — a travel companion platform that connects solo travelers based on shared goals
+  and experiences. That project deepened my love for scalable app design and real-world problem solving.
+  <br /><br />
+  Beyond technical skills, I value <strong>clarity, accessibility,</strong> and
+  <strong> performance</strong> in everything I build. I’m passionate about clean design, semantic code, and
+  creating web applications that don’t just function well but also <em>feel right</em> to use.
+  <br /><br />
+  I currently live in Toronto, constantly learning and experimenting with emerging web technologies, cloud
+  deployment, and creative front-end animation techniques. My goal is to continue growing as a developer while
+  collaborating on projects that merge creativity, technology, and purpose.
+  <br /><br />
+  <strong>Let’s head over to the Projects page to see some of my work!</strong>
+</p>
+<div className="about-cta">
+  <button
+  className="go-projects-btn"
+  onClick={() => (window.location.href = "/projects")}
+>
+  💻 Let’s go to the Projects page ✨
+</button>
+
+</div>
+
+
   </div>
 
   <div id="certificates" className="certs">

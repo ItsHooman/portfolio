@@ -134,3 +134,35 @@
   .home-message { padding: 0 0.5rem; }
   .certs-grid img { height: 180px; }
 }
+
+
+.go-projects-btn {
+  margin-top: 1.8rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #5ac8fa, #007aff);
+  border: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.go-projects-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.45);
+  background: linear-gradient(135deg, #007aff, #5ac8fa);
+}
+
+.go-projects-btn:active {
+  transform: scale(0.98);
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.go-projects-btn {
+  animation: pulse 3s infinite;
+}
