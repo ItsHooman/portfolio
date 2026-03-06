@@ -6,6 +6,7 @@ const ProjectSchema = new mongoose.Schema({
   technologies: { type: [String], required: true },
   liveDemo: { type: String },
   githubLink: { type: String },
+  youtubeDemo: String ,
   createdAt: { type: Date, default: Date.now },
 });
 
